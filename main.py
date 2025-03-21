@@ -1,4 +1,4 @@
-def k_in_num(k, num):
+'''def k_in_num(k, num):
     # 确定 num 的最大位数
     max_digit_place = 0
     temp_num = num
@@ -47,6 +47,7 @@ def largest_factor(n):
 n = int(input('type a intaget；'))
 
 largest_factor(n)
+'''
 
 
 
