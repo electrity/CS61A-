@@ -98,50 +98,17 @@ def cheak(list):
 
 print(cheak(s))"""
 
-class Link:
-    """A linked list."""
+"""class Link:"""
 
-    empty = ()
+from math import pow
 
-    def __init__(self, first, rest=empty):
-        assert rest is Link.empty or isinstance(rest, Link)
-        self.first = first
-        self.rest = rest
-
-    def __repr__(self):
-        if self.rest is not Link.empty:
-            rest_repr = ', ' + repr(self.rest)
-        else:
-            rest_repr = ''
-        return 'Link(' + repr(self.first) + rest_repr + ')'
-
-    def __str__(self):
-        string = '<'
-        while self.rest is not Link.empty:
-            string += str(self.first) + ' '
-            self = self.rest
-        return string + str(self.first) + '>'
-
-def stored_list(lst):
-    if not lst:
-        return Link.empty
-    return Link(lst[0], stored_list(lst[1:]))
-
-def link_ordered(links):
-    list = []
-    if links.rest:
-        list.append(links.first)
-        link_ordered(links.rest)
+def reduce(f,s,x):
+    result = x
+    if s:
+        return reduce(f,s[1:],f(result,s[0]))
     else:
-        list.append(links.first)
-    list.sort(key=abs)
-    return stored_list(list)
+        return x
 
 
-def tow_link_ordered(link1,link2):
-    links = link1 + link2
-    return link_ordered(links)
-
-print(tow_link_ordered([1,3,5],[2,4,6]))
-
+print(reduce(pow,[1,2,3],20))
 
