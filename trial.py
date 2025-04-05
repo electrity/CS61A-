@@ -110,5 +110,5 @@ def reduce(f,s,x):
         return x
 
 
-print(reduce(pow,[1,42,3],204))
+print(reduce(pow,[1,424,3],204))
 
